@@ -39,7 +39,7 @@ function Step3({
   useEffect(() => {
     const allProfileEvents: Event[] = [];
     const allRelayEvents: Event[] = [];
-    pool.subscribeMany(fallBackRelays, [{ authors: [pk], kinds: [0] }], {
+    pool.subscribeMany(fallBackRelays, [{ authors: [pk], kinds: [0, 10002] }], {
       onevent: (e) => {
         if (e.kind === 0) {
           allProfileEvents.push(e);
